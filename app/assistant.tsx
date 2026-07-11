@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/breadcrumb";
 
 import LoginButton from "@/components/login-button";
+import ModelSelector from "@/components/model-selector";
 
 export const Assistant = () => {
   const runtime = useChatRuntime({
@@ -50,16 +51,17 @@ export const Assistant = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Build Your Own ChatGPT UX
+                      Jaan AI
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator className="hidden md:block" />
                   <BreadcrumbItem>
-                    <BreadcrumbPage>Starter Template</BreadcrumbPage>
+                    <BreadcrumbPage>Personal AI Assistant</BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
-              <div className="ml-auto">
+             <div className="ml-auto flex items-center gap-3">
+  <ModelSelector />
   <LoginButton />
 </div>
             </header>

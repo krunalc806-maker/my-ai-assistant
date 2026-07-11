@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "My AI Assistant",
-  description: "Personal AI Assistant",
+export const metadata = {
+  title: "Jaan AI",
+  description: "Jaan AI - Personal AI Assistant by Krunal",
 };
 
 export default function RootLayout({
