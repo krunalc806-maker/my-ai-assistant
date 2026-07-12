@@ -160,11 +160,11 @@ const AttachmentUI: FC = () => {
   const isError = uploadState === "error";
 
   const errorMessage = useAuiState((s) =>
-    s.attachment.status.type === "incomplete" &&
-    s.attachment.status.reason === "error"
-      ? (s.attachment.status.message ?? "Upload failed")
-      : undefined,
-  );
+  s.attachment.status.type === "incomplete" &&
+  s.attachment.status.reason === "error"
+    ? "Upload failed"
+    : null
+);
 
   return (
     <Tooltip>

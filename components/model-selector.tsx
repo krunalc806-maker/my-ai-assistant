@@ -12,13 +12,21 @@ export default function ModelSelector() {
   const [model, setModel] = useState("openrouter/free");
 
   useEffect(() => {
-    localStorage.setItem("selected-model", model);
-  }, [model]);
+    const saved = localStorage.getItem("selected-model");
+    if (saved) {
+      setModel(saved);
+    }
+  }, []);
+
+  const handleChange = (value: string) => {
+    setModel(value);
+    localStorage.setItem("selected-model", value);
+  };
 
   return (
     <select
       value={model}
-      onChange={(e) => setModel(e.target.value)}
+      onChange={(e) => handleChange(e.target.value)}
       className="border rounded-lg px-3 py-2 text-sm"
     >
       {models.map((m) => (
