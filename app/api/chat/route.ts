@@ -10,15 +10,10 @@ const openrouter = createOpenAI({
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
-  const {
-  messages,
-  system,
-  tools,
-  model = "openrouter/free",
-} = await req.json();
+  const { messages, system, tools } = await req.json();
 
   const result = streamText({
-  model: openrouter(model),
+  model: openrouter("openrouter/free"),
 
    system: `
 You are Jaan AI.

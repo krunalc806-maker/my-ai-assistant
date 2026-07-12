@@ -5,6 +5,8 @@ import {
   useChatRuntime,
   AssistantChatTransport,
 } from "@assistant-ui/react-ai-sdk";
+
+
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import { Thread } from "@/components/thread";
 import {
@@ -27,12 +29,12 @@ import LoginButton from "@/components/login-button";
 import ModelSelector from "@/components/model-selector";
 
 export const Assistant = () => {
-  const runtime = useChatRuntime({
-    sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
-    transport: new AssistantChatTransport({
-      api: "/api/chat",
-    }),
-  });
+ const runtime = useChatRuntime({
+  sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
+  transport: new AssistantChatTransport({
+    api: "/api/chat",
+  }),
+});
 
   return (
     <AssistantRuntimeProvider runtime={runtime}>
